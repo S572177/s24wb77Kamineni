@@ -1,17 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p I love to play tennis.
-  button(type="button", class="btn btn-secondary", onclick="double()") I am a button
-  div(id="double") Up the amount
+    h1= title
 
-  script.
-    let value = 0;
-    let power = 1;
-    function double() {
-      value++;
-      power *= 2;
-      document.getElementById("double").innerHTML =` Two to the power ${power} is ${value}`;
-    }
+    p Welcome to #{title}
+
+    button(type="button" class="btn btn-secondary" onclick="double()") I am a button
+
+    div#double Up the amount
+
+    script.
+      var value = 0,power = 1;
+      function double() {
+      value = value + 1;
+      power = power * 2;
+      document.getElementById('double').innerText = "Two to the power " + value + " is " + power;
+     }
